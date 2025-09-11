@@ -1,0 +1,36 @@
+{/* <div className='w-[100%] border-2 border-white h-[90dvh]'>
+          <iframe
+             className='absolute top-0 right-0 border-4 border-green-900 outline-0 w-[100%] h-[100%]'
+            src={youtubeUrl}
+            allowFullScreen>
+          </iframe>
+        </div> */}
+
+
+         for (let movie of selectedMovies) {
+          try {
+              const movieDetails = await fetchData(`https://api.themoviedb.org/3/movie/${movie.id}?append_to_response=videos,credits`);
+
+              const videos = movieDetails.data.videos.results;
+              
+              // Find the best trailer
+              const trailer = videos.find(video => 
+                  video.type === "Trailer" && 
+                  video.site === "YouTube" &&
+                  video.official === true
+              ) || videos.find(video => 
+                  video.type === "Trailer" && 
+                  video.site === "YouTube"
+              );
+              
+              if (trailer) {
+                  // Store both movie details and trailer data
+                  heroMovieData = movieDetails.data;
+                  heroTrailerData = trailer;
+                  break; // Exit the loop since we found what we need
+              }
+          } catch (error) {
+              console.error(`Failed to fetch details for movie ${movie.id}:`, error);
+              // Continue to next movie if error occurs
+          }
+      }

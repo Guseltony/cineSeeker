@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@400..900&family=Lobster&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* *color theme */
+  --color-background: #1a1a1a;
+  --color-surface: #252525;
+  --color-primary-text: #ffffff;
+  --color-secondary-text: #cccccc;
+  --color-primary: #00b4d8;
+  --color-primary-hover: #0077b6;
+  --color-secondary: #ff6b6b;
+  --color-secondary-hover: #ee5a52;
+
+
+  /* *font theme */
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-plusjakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-anton: 'Anton', sans-serif;
+  --font-cinzel: 'Cinzel', serif;
+
+
+}
+
+
+body {
+  font-family: var(--font-plusjakarta) ;
+  background-color: var(--color-background);
+  color: var(--color-primary-text);
+  overflow-x: hidden;
+}
+
+.hero_overlay {
+  background: linear-gradient(227deg,rgba(0, 0, 0, 1) 20%, rgba(0, 180, 216, 0.75) 50%, rgba(238, 90, 82, 0.7) 80%);
+}
+
+
+
+
+
+
+/* !utility */
+
+@layer component {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+}
