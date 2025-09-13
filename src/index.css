@@ -32,8 +32,8 @@ body {
   overflow-x: hidden;
 }
 
-.hero_overlay {
-  background: linear-gradient(227deg,rgba(0, 0, 0, 1) 20%, rgba(0, 180, 216, 0.75) 50%, rgba(238, 90, 82, 0.7) 80%);
+.hero-overlay {
+  background: linear-gradient(30deg, var(--color-primary-hover), rgba(0,0,0,0.7), rgba(0,0,0,0.8), var(--color-secondary-hover));
 }
 
 
