@@ -245,25 +245,25 @@ const Hero = () => {
       <div className="hero-overlay absolute top-0 right-0 w-[100%] h-[100%] z-[30]"></div>
       <div className='relative w-screen min-h-[90dvh] flex items-end justify-between'>
         <div className='absolute top-0 right-0 w-[100%] h-[100%]  z-[20]'>
-          <img src={`${imageBaseUrl}${movie?.backdrop_path}`} alt="background image" className='w-full h-full object-cover'/>
+          <img src={`${imageBaseUrl}${movie?.backdrop_path}`} alt="" className='w-full h-full  object-[center_top] object-cover'/>
         </div>
         
-        <div className='z-[65] w-[584px] h-fit' ref={leftHeroCol}>
-          <div className="relative z-[60] px-2 py-2 lg:py-6 lg:px-6 2xl:py-10 2xl:px-10 flex items-end justify-end w-fit bg-black/80 backdrop-blur-2xl" ref={bannerTitle}>
+        <div className='flex-center z-[65] w-[584px] h-fit' ref={leftHeroCol}>
+          <div className="relative z-[60] flex-center h-fit lg:h-[350px] w-[100%] bg-black/50 backdrop-blur-2xl rounded-tr-4xl" ref={bannerTitle}>
             {
               movie && 
-                <div className='z-[88]' ref={bannerContent}>
-                  <h1 className='font-bebas text-4xl lg:text-6xl uppercase' ref={movieTitle}>{movie.title}</h1>
+                <div className='z-[88] w-[90%] pt-2 pb-2.5 ' ref={bannerContent}>
+                  <h1 className='font-bebas text-2xl md:text-4xl lg:text-6xl uppercase' ref={movieTitle}>{movie.title}</h1>
                   <p className='text-xs' ref={movieTagline}>{movie.tagline}</p>
                   <div className='w-fit flex-center space-x-4 md:space-x-8 my-2 xl:my-4' ref={movieIcons}>
                     <div className='text-lg flex-center' >
                       <MdOutlineStar size={25} color={'var(--color-primary)'} className='mr-2' />
-                      <span className='font-anton text-xl text-secondary-hover'>{(movie.vote_average).toFixed(1)}</span> / <span className='text-sm self-end mb-0.5'>10</span>
+                      <span className='font-anton text-base lg:text-xl text-secondary-hover'>{(movie.vote_average).toFixed(1)}</span> / <span className='text-xs lg:text-sm self-end mb-0.5'>10</span>
                     </div>
-                    <div className='flex justify-center items-center w-fit text-sm lg:text-base'>
+                    <div className='flex justify-center items-center w-fit text-xs lg:text-base'>
                       <SlCalender size={25} color={'var(--color-primary)'} className='mr-2' /> {movie?.release_date}
                     </div>
-                    <div className='flex justify-center items-center w-fit text-sm lg:text-base'>
+                    <div className='flex justify-center items-center w-fit text-xs lg:text-base'>
                       <GiSandsOfTime size={25} color={'var(--color-primary)'} className='mr-2'/> {movieDuration}
                     </div>
                   </div>

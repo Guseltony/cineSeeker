@@ -30,7 +30,7 @@ const Header = () => {
         <Search />
 
         {/* icon */}
-        <div className='flex-center space-x-6 text-xl '>
+        <div className='flex-center space-x-4 lg:space-x-6 text-base lg:text-xl '>
           <MdOutlineFavorite className='text-secondary hover:text-primary-hover transition-all duration-300 ease-in cursor-pointer' />
           <FaBell className='text-secondary hover:text-primary-hover transition-all duration-300 ease-in cursor-pointer' />
           <FaUser className='text-secondary hover:text-primary-hover transition-all duration-300 ease-in cursor-pointer' />

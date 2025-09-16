@@ -5,7 +5,7 @@
 
 @theme {
   /* *color theme */
-  --color-background: #1a1a1a;
+  --color-background: #000;
   --color-surface: #252525;
   --color-primary-text: #ffffff;
   --color-secondary-text: #cccccc;
@@ -34,6 +34,50 @@ body {
 
 .hero-overlay {
   background: linear-gradient(30deg, var(--color-primary-hover), rgba(0,0,0,0.7), rgba(0,0,0,0.8), var(--color-secondary-hover));
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.side_shadow {
+  /* border: 2px solid red; */
+}
+
+/* .side_shadow::after {
+  content: " ";
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(30deg, transparent,  var(--color-secondary-hover), var(--color-primary), transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 40;
+  filter: blur(1px);
+} */
+
+.side_shadow::after {
+  content: "";
+  width: 2px; /* a bit wider for a smoother fade */
+  height: 350px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  z-index: 40;
+  pointer-events: none; /* don't block clicks */
+  box-shadow: 0px 0px 50px 15px var(--color-secondary-hover), 0px 0px 50px 15px var(--color-primary);
+  background: linear-gradient(360deg, var(--color-secondary), var(--color-primary-hover));
+  border-radius: 50px;
+
+  /* background: linear-gradient(45deg, var(--color-primary), rgba(0,0,0,0.6), var(--color-secondary-hover));
+  filter: blur(8px); */
+
 }
 
 

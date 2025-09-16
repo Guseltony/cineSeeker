@@ -34,3 +34,20 @@
               // Continue to next movie if error occurs
           }
       }
+
+
+
+
+
+
+      let moviesssss = [];
+
+        for (let i = 0; i < trendingMovieArray.length; i++) {
+          // setTrending([])
+          const movieId = trendingMovieArray[i]?.id
+          const movieFullDetails = await fetchData(`https://api.themoviedb.org/3/movie/${movieId}`)
+          moviesssss.push(movieFullDetails)
+          // setTrending(() => [ movieFullDetails])
+        }
+
+        console.log(moviesssss)
