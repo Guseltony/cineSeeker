@@ -48,7 +48,7 @@ const NowPlaying = () => {
       <div className='flex-between w-[100%]'>
         <div className='lg:w-[60%] w-[100%] '>
           {/* iframe part */}
-          <div className='relative w-[100%] h-[400px] '>
+          <div className='relative w-[100%] h-[400px] lg:h-[700px]'>
             <div className='w-full h-28 lg:h-20 bg-black absolute top-0 left-0'></div>
             <div className='w-full h-20 bg-black absolute bottom-0 left-0'></div>
             <iframe

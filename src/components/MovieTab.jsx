@@ -4,7 +4,7 @@ import { MovieCard } from './MovieCard'
 
 
 const MovieTab = () => {
-  const movieGenreArray = ['Trending', 'Latest', 'TopRated', 'Adult', 'Popular', 'Action', 'Romance', 'Animation']
+  const movieGenreArray = ['Trending', 'Latest', 'TopRated', 'Music', 'Popular', 'Action', 'Romance', 'Animation']
 
   const {fetchData} = useFetch()
 
@@ -19,7 +19,7 @@ const MovieTab = () => {
   const [popular, setPopular] = useState([])
   const [action, setAction] = useState([])
   const [animation, setAnimation] = useState([])
-  const [adult, setAdult] = useState([])
+  const [music, setMusic] = useState([])
 
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -43,8 +43,8 @@ const MovieTab = () => {
       case "TopRated":
         setTabMovies(topRated)
         break;
-      case "Adult":
-        setTabMovies(adult)
+      case "Music":
+        setTabMovies(music)
         break;
       case "Popular":
         setTabMovies(popular)
@@ -170,13 +170,13 @@ const MovieTab = () => {
       }
 
       // adult
-      const adultMovies = await fetchData('https://api.themoviedb.org/3/search/movie?api_key=f10e67741fb4ed524fe27baab364b3d9&query=cougar&page=1&include_adult=true')
+      const musicMovies = await fetchData(`https://api.themoviedb.org/3/discover/movie?with_genres=${10402}&sort_by=popularity`)
 
-      const adultMovieArray = adultMovies?.data.results.slice(0, 15)
+      const musicMovieArray = musicMovies?.data.results.slice(0, 15)
       
-      if (adultMovieArray) {
+      if (musicMovieArray) {
         try {
-          setAdult(adultMovieArray)
+          setMusic(musicMovieArray)
           
         } catch (error) {
           console.log(error)
